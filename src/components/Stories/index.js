@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { 
+import {
   Container,
   ContainerHeader,
   GroupLabel,
@@ -9,19 +9,18 @@ import {
   ContainerItemStory,
   ContainerPhoto,
   Photo,
-  Name
+  Name,
 } from './styles';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import stories from './stories.json';
 
-const Stories = () => {
-
+const Stories = ({onShowStoriesModal}) => {
   return (
     <Container>
       <ContainerHeader>
-        <Label>Stories</Label> 
+        <Label>Stories</Label>
         <GroupLabel>
           <Icon name="caret-right" size={20} />
           <Label>Watch all</Label>
@@ -29,14 +28,15 @@ const Stories = () => {
       </ContainerHeader>
 
       <ContainerScrollStory>
-        { stories && stories.map((storie, index) => (
-          <ContainerItemStory key={index}>
-            <ContainerPhoto>
-              <Photo source={{ uri: storie.photo }} />    
-            </ContainerPhoto>
-            <Name>{storie.name}</Name>
-          </ContainerItemStory>
-        )) }
+        {stories &&
+          stories.map((storie, index) => (
+            <ContainerItemStory key={index} onPress={onShowStoriesModal}>
+              <ContainerPhoto>
+                <Photo source={{uri: storie.photo}} />
+              </ContainerPhoto>
+              <Name>{storie.name}</Name>
+            </ContainerItemStory>
+          ))}
       </ContainerScrollStory>
     </Container>
   );

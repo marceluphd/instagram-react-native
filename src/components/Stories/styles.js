@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
   padding: 10px;
@@ -20,11 +20,9 @@ export const Label = styled.Text`
 
 export const ContainerScrollStory = styled.ScrollView.attrs({
   horizontal: true,
-  showsHorizontalScrollIndicator: false
-})`
-  
-`;
-export const ContainerItemStory = styled.View`
+  showsHorizontalScrollIndicator: false,
+})``;
+export const ContainerItemStory = styled.TouchableOpacity`
   width: 80px;
   height: 80px;
   justify-content: center;
@@ -32,7 +30,7 @@ export const ContainerItemStory = styled.View`
   margin-top: 10px;
 `;
 export const ContainerPhoto = styled.View`
-  background-color: #F89B3B;
+  background-color: #f89b3b;
   width: 60px;
   height: 60px;
   justify-content: center;
@@ -40,7 +38,7 @@ export const ContainerPhoto = styled.View`
   border-radius: 28px;
 `;
 export const Photo = styled.Image.attrs({
-  resizeMode: 'cover'
+  resizeMode: 'cover',
 })`
   width: 56px;
   height: 56px;
